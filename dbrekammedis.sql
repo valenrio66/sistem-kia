@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2024 at 04:15 PM
+-- Generation Time: Feb 23, 2024 at 10:38 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -44,6 +44,20 @@ CREATE TABLE `role` (
   `nama_role` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`id_role`, `nama_role`) VALUES
+(1, 'Admin'),
+(2, 'Pasien'),
+(3, 'Staff Pendaftaran'),
+(4, 'Unit Medis'),
+(5, 'Staff Instalasi RM'),
+(6, 'Kepala Instalasi RM'),
+(7, 'Karumit'),
+(8, 'Dinkes');
+
 -- --------------------------------------------------------
 
 --
@@ -52,16 +66,24 @@ CREATE TABLE `role` (
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `id_role` int(11) NOT NULL,
-  `nama_user` varchar(50) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `tgl_lahir` varchar(20) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
-  `nik` varchar(30) NOT NULL,
-  `no_hp` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `id_role` int(11) DEFAULT NULL,
+  `nama_user` varchar(50) DEFAULT NULL,
+  `username` varchar(10) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `nik` varchar(30) DEFAULT NULL,
+  `no_hp` varchar(30) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `id_role`, `nama_user`, `username`, `password`, `tgl_lahir`, `alamat`, `nik`, `no_hp`, `email`) VALUES
+(1, 1, 'Valen Rionald', 'admin', '$2y$10$a76t9jE8XVWng6PzFg//zOOWnQOXR8pQZltUnS5ca8Cvj5XxZn/8S', '2002-08-06', 'Jalan Mandor Aleh No. 225 RT.04/RW.04 Kel. Sepanjang Jaya', '123456789123456789', '628941248787', 'vrionald@gmail.com'),
+(2, NULL, 'Bachtiar Ramadhan', 'admin2', '$2y$10$PVXIldFP2k8FHYtOnMCTouukZWnRrBHn/AqfD98YFDNVGYtz5MXe2', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -99,13 +121,13 @@ ALTER TABLE `antrian`
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
