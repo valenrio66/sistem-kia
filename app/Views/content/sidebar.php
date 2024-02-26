@@ -7,7 +7,8 @@
 	<title>Modernize Free</title>
 	<link rel="shortcut icon" type="image/png" href="<?= base_url('images/logos/favicon.png') ?>" />
 	<link rel="stylesheet" href="<?= base_url('css/styles.min.css') ?>" />
-	<link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -53,7 +54,7 @@
 							</a>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+							<a class="sidebar-link" href="<?= base_url('/dashboard/role') ?>" aria-expanded="false">
 								<span>
 									<i class="ti ti-user-circle"></i>
 								</span>

@@ -1,13 +1,14 @@
 <?= $this->include('content/sidebar') ?>
 
 <?= $this->include('content/header') ?>
-<div class="card">
-    <div class="card-body">
-        <div class="card">
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
             <div class="card-body">
-                <div class="container-fluid">
-                    <h1>Data Pengguna</h1>
-                    <button type="button" class="btn btn-primary">Tambah Data Pengguna</button>
+                <h1>Data Pengguna</h1>
+                <a type="button" href="<?= base_url('/dashboard/user/add') ?>" class="btn btn-primary">Tambah Data
+                    Pengguna</a>
+                <div class="row">
                     <table id="example" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
@@ -47,13 +48,14 @@
                                         <?= $user['email'] ?>
                                     </td>
                                     <td>
-                                        <?= $user['id_role'] ?>
+                                        <?= $user['nama_role'] ?>
                                     </td>
                                     <td>
-                                        <!-- Tambahkan tombol atau link aksi sesuai kebutuhan -->
-                                        <!-- Contoh: -->
-                                        <a href="#" class="btn btn-info">Edit</a>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                        <a href="<?= base_url('/dashboard/user/update/' . $user['id_user']) ?>"
+                                            class="btn btn-info">Edit</a>
+                                        <a href="<?= base_url('user/delete/' . $user['id_user']) ?>"
+                                            class="btn btn-danger"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
