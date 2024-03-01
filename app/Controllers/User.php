@@ -7,22 +7,41 @@ use App\Models\RoleModel;
 
 class User extends BaseController
 {
-	public function getuser(): string
+	// Function for Get All Data
+	public function getAllUser(): string
 	{
 		$userModel = new UserModel();
 		$data['users'] = $userModel->getUserWithRoles();
 
-		return view('user/user', $data);
+		return view('user/user_view', $data);
 	}
 
-	public function adduser(): string
+	// Function for Get Data By Id
+	public function getUserById($id) : string 
+	{
+		$userModel = new UserModel();
+		$roleModel = new RoleModel();
+		$user = $userModel->find($id);
+
+		if (!$user) {
+			return 'User not found';
+		}
+
+		$role = $roleModel->find($user['id_role']);
+		$user['role_name'] = $role ? $role['nama_role'] : '';
+		$data['user'] = $user;
+		return view('user/user_detail', $data);
+	}
+
+	// Function for Create User
+	public function renderPageCreateUser(): string
 	{
 		$roleModel = new RoleModel();
 		$data['roles'] = $roleModel->findAll();
-		return view('user/adduser', $data);
+		return view('user/user_create', $data);
 	}
 
-	public function create()
+	public function createUser()
 	{
 		$userModel = new UserModel();
 		$data = $this->request->getPost();
@@ -34,18 +53,19 @@ class User extends BaseController
 		}
 	}
 
-	public function updateuser($id): string
+	// Functin for Update Data
+	public function renderPageUpdateUser($id): string
 	{
 		$userModel = new UserModel();
 		$roleModel = new RoleModel();
 
 		$data['user'] = $userModel->find($id);
 		$data['roles'] = $roleModel->findAll();
-
-		return view('user/updateuser', $data);
+		
+		return view('user/user_update', $data);
 	}
 
-	public function update($id)
+	public function updateUser($id)
 	{
 		$userModel = new UserModel();
 		$data = $this->request->getPost();
@@ -57,7 +77,7 @@ class User extends BaseController
 		}
 	}
 
-	public function delete($id)
+	public function deleteUser($id)
 	{
 		$userModel = new UserModel();
 		if ($userModel->deleteUser($id)) {

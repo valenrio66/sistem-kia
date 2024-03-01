@@ -1,90 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Modernize Free</title>
-	<link rel="shortcut icon" type="image/png" href="<?= base_url('images/logos/favicon.png') ?>" />
-	<link rel="stylesheet" href="<?= base_url('css/styles.min.css') ?>" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="<?= base_url('img/icons/icon-48x48.png') ?>" />
+
+	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
+
+	<title>Sistem Kesehatan Ibu & Anak</title>
+
+	<link href="<?= base_url('css/app.css') ?>" rel="stylesheet">
+	<link href="<?= base_url('css/style.css') ?>" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
-	<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-		data-sidebar-position="fixed" data-header-position="fixed">
-		<!-- Sidebar Start -->
-		<aside class="left-sidebar">
-			<!-- Sidebar scroll-->
-			<div>
-				<div class="brand-logo d-flex align-items-center justify-content-between">
-					<a href="./index.html" class="text-nowrap logo-img">
-						<img src="<?= base_url('images/logos/dark-logo.svg') ?>" width="180" alt="" />
-					</a>
-					<div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-						<i class="ti ti-x fs-8"></i>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" style="text-align: center;" href="index.html">
+          <span class="align-middle">SISTEM KIA</span>
+        </a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Home
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="<?= base_url('/dashboard') ?>">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            </a>
+					</li>
+
+                    <li class="sidebar-header">
+						Submenu User
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/user') ?>">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/role') ?>">
+              <i class="align-middle" data-feather="users"></i> <span class="align-middle">Role</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="pages-sign-up.html">
+              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Antrian</span>
+            </a>
+					</li>
+
+                    <li class="sidebar-header">
+						Submenu Laporan
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="pages-blank.html">
+              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Laporan KIA</span>
+            </a>
+					</li>
+				</ul>
+
+				<div class="sidebar-cta">
+					<div class="sidebar-cta-content">
+						<strong class="d-inline-block mb-2">Upgrade to Pro</strong>
+						<div class="mb-3 text-sm">
+							Are you looking for more components? Check out our premium version.
+						</div>
+						<div class="d-grid">
+							<a href="upgrade-to-pro.html" class="btn btn-primary">Upgrade to Pro</a>
+						</div>
 					</div>
 				</div>
-				<!-- Sidebar navigation-->
-				<nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-					<ul id="sidebarnav">
-						<li class="nav-small-cap">
-							<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-							<span class="hide-menu">Home</span>
-						</li>
-						<li class="sidebar-item">
-							<a class="sidebar-link" href="<?= base_url('/dashboard') ?>" aria-expanded="false">
-								<span>
-									<i class="ti ti-layout-dashboard"></i>
-								</span>
-								<span class="hide-menu">Dashboard</span>
-							</a>
-						</li>
-						<li class="nav-small-cap">
-							<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-							<span class="hide-menu">KEBUTUHAN USER</span>
-						</li>
-						<li class="sidebar-item">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/user') ?>" aria-expanded="false">
-								<span>
-									<i class="ti ti-user"></i>
-								</span>
-								<span class="hide-menu">User</span>
-							</a>
-						</li>
-						<li class="sidebar-item">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/role') ?>" aria-expanded="false">
-								<span>
-									<i class="ti ti-user-circle"></i>
-								</span>
-								<span class="hide-menu">Role</span>
-							</a>
-						</li>
-						<li class="sidebar-item">
-							<a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
-								<span>
-									<i class="ti ti-line"></i>
-								</span>
-								<span class="hide-menu">Antrean</span>
-							</a>
-						</li>
-						<li class="nav-small-cap">
-							<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-							<span class="hide-menu">LAPORAN</span>
-						</li>
-						<li class="sidebar-item">
-							<a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
-								<span>
-									<i class="ti ti-report"></i>
-								</span>
-								<span class="hide-menu">Laporan KIA</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-				<!-- End Sidebar navigation -->
 			</div>
-			<!-- End Sidebar scroll-->
-		</aside>
-		<!--  Sidebar End -->
+		</nav>

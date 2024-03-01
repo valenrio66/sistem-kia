@@ -1,11 +1,25 @@
-		<?= $this->include('content/sidebar') ?>
+<?= $this->include('content/sidebar') ?>
 
-		<?= $this->include('content/header') ?>
+			<?= $this->include('content/header') ?>
 
-		<div class="container-fluid">
+			<main class="content">
+				<div class="container-fluid p-0">
 
-			<h1>Hello World</h1>
-		</div>
-		</div>
-		</div>
-		<?= $this->include('content/footer') ?>
+					<h1 class="h3 mb-3">Blank Page</h1>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Empty card</h5>
+								</div>
+								<div class="card-body">
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</main>
+
+			<?= $this->include('content/footer') ?>
