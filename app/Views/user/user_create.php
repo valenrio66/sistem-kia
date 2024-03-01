@@ -9,7 +9,7 @@
                 <h1 class="h3 mb-3"><b>Tambah User</b></h1>
                     <div class="row">
                         <div class="col-12">
-                        <form action="<?= base_url('user/create') ?>" method="post">
+                        <form id="createUser" action="<?= base_url('user/create') ?>" method="post">
                             <div class="card">
                             <div class="card-body">
                                 <!-- Inputan Nama Lengkap -->
@@ -135,3 +135,4 @@
             </main>
 
 <?= $this->include('content/footer') ?>
+<script src="<?= base_url('js/user/create.js') ?>"></script>

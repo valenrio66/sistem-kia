@@ -9,7 +9,7 @@
                 <h1 class="h3 mb-3"><b>Update User</b></h1>
                     <div class="row">
                         <div class="col-12">
-                        <form action="<?= base_url('user/update/' . $user['id_user']) ?>" method="post">
+                        <form id="updateUser" action="<?= base_url('user/update/' . $user['id_user']) ?>" method="post">
                             <div class="card">
                             <div class="card-body">
                                 <!-- Inputan Nama Lengkap -->
@@ -40,6 +40,7 @@
                                             class="form-control"
                                             id="password"
                                             name="password"
+                                            value="<?= esc($user['password']) ?>"
                                             required/>
                                     </div>
                                 </div>
@@ -117,13 +118,13 @@
                                     text-align: right;
                                     margin-top: 20px;
                                 ">
-                                <a href="#"
+                                <a onclick="history.back()"
                                     type="button"
                                     class="btn btn-info">
                                     Cancel
                                 </a>
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-primary"
                                     id="submitButton">
                                     Simpan
@@ -138,3 +139,4 @@
             </main>
 
 <?= $this->include('content/footer') ?>
+<script src="<?= base_url('js/user/update.js') ?>"></script>

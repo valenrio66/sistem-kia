@@ -70,7 +70,7 @@ class User extends BaseController
 		$userModel = new UserModel();
 		$data = $this->request->getPost();
 
-		if ($userModel->updateUser($id, $data)) {
+		if ($userModel->updateUserModel($id, $data)) {
 			return redirect()->to('/dashboard/user')->with('message', 'User berhasil diupdate');
 		} else {
 			return redirect()->back()->withInput()->with('errors', $userModel->errors());

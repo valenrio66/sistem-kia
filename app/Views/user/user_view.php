@@ -61,7 +61,7 @@
                                                 <td>
                                                     <a href="<?= base_url('/dashboard/user/detail/' . $user['id_user']) ?>" class="btn btn-info">Detail</a>
                                                     <a href="<?= base_url('/dashboard/user/update/' . $user['id_user']) ?>" class="btn btn-warning">Edit</a>
-                                                    <a href="<?= base_url('user/delete/' . $user['id_user']) ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</a>
+                                                    <a href="<?= base_url('user/delete/' . $user['id_user']) ?>" class="btn btn-danger" onclick="return confirmDelete(event)">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -95,3 +95,4 @@
             </main>
 
 <?= $this->include('content/footer') ?>
+<script src="<?= base_url('js/user/delete.js') ?>"></script>

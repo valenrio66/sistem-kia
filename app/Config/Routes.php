@@ -18,7 +18,7 @@ $routes->get('auth/logout', 'Auth::logout');
 $routes->get('/dashboard/user', 'User::getAllUser', ['filter' => 'auth']);
 $routes->get('/dashboard/user/detail/(:segment)', 'User::getUserById/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/user/add', 'User::renderPageCreateUser', ['filter' => 'auth']);
-$routes->post('user/create', 'User::createUser', ['filter' => 'auth']);
+$routes->post('/user/create', 'User::createUser', ['filter' => 'auth']);
 $routes->get('/dashboard/user/update/(:segment)', 'User::renderPageUpdateUser/$1', ['filter' => 'auth']);
 $routes->post('user/update/(:segment)', 'User::updateUser/$1', ['filter' => 'auth']);
 $routes->get('/user/delete/(:num)', 'User::deleteUser/$1', ['filter' => 'auth']);
