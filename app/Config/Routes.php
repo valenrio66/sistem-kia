@@ -30,3 +30,6 @@ $routes->post('/role/create', 'Role::createRole', ['filter' => 'auth']);
 $routes->get('/role/delete/(:num)', 'Role::deleteRole/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/role/update/(:segment)', 'Role::renderPageUpdateRole/$1', ['filter' => 'auth']);
 $routes->post('/role/update/(:segment)', 'Role::updateRole/$1', ['filter' => 'auth']);
+
+// Routes Pasien
+$routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);

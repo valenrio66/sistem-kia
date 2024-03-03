@@ -10,6 +10,7 @@ class UserModel extends Model
     protected $primaryKey = 'id_user';
     protected $allowedFields = ['nama_user', 'username', 'password', 'tgl_lahir', 'alamat', 'nik', 'no_hp', 'email', 'id_role'];
 
+    // Untuk Get All
     public function getUserWithRoles()
     {
         return $this->select('user.*, role.nama_role')
@@ -17,18 +18,28 @@ class UserModel extends Model
             ->findAll();
     }
 
+    // Untuk Create User
     public function createUser($data)
     {
         return $this->insert($data);
     }
 
+    // Untuk Update Data
     public function updateUserModel($id, $data)
     {
         return $this->update($id, $data);
     }
 
+    // Untuk Delete Data
     public function deleteUser($id)
     {
         return $this->delete($id);
     }
+
+    // Untuk Get User by ID
+    public function getUserById($id)
+    {
+        return $this->find($id);
+    }
 }
+?>
