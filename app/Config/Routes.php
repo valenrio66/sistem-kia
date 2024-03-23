@@ -31,5 +31,13 @@ $routes->get('/role/delete/(:num)', 'Role::deleteRole/$1', ['filter' => 'auth'])
 $routes->get('/dashboard/role/update/(:segment)', 'Role::renderPageUpdateRole/$1', ['filter' => 'auth']);
 $routes->post('/role/update/(:segment)', 'Role::updateRole/$1', ['filter' => 'auth']);
 
+// Routes Antenatal
+$routes->get('/dashboard/antenatal', 'Antenatal::getAllAntenatal', ['filter' => 'auth']);
+$routes->get('/dashboard/antenatal/add', 'Antenatal::renderPageCreateAntenatal', ['filter' => 'auth']);
+$routes->post('/antenatal/create', 'Antenatal::createAntenatal', ['filter' => 'auth']);
+$routes->get('/antenatal/delete/(:num)', 'Antenatal::deleteAntenatal/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/antenatal/update/(:segment)', 'Antenatal::renderPageUpdateAntenatal/$1', ['filter' => 'auth']);
+$routes->post('/antenatal/update/(:segment)', 'Antenatal::updateAntenatal/$1', ['filter' => 'auth']);
+
 // Routes Pasien
 $routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);
