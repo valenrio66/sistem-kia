@@ -38,6 +38,7 @@ $routes->post('/antenatal/create', 'Antenatal::createAntenatal', ['filter' => 'a
 $routes->get('/antenatal/delete/(:num)', 'Antenatal::deleteAntenatal/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/antenatal/update/(:segment)', 'Antenatal::renderPageUpdateAntenatal/$1', ['filter' => 'auth']);
 $routes->post('/antenatal/update/(:segment)', 'Antenatal::updateAntenatal/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/antenatal/export', 'Antenatal::generatePDF', ['filter' => 'auth']);
 
 // Routes Pasien
 $routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);
