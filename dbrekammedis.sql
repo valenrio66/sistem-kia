@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2024 at 10:38 AM
+-- Generation Time: Mar 24, 2024 at 05:02 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbrekammedis`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `antenatal`
+--
+
+CREATE TABLE `antenatal` (
+  `id_antenatal` int(11) NOT NULL,
+  `no_rm` varchar(50) NOT NULL,
+  `nama_pasien` varchar(50) NOT NULL,
+  `nama_suami` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `tgl_kunjungan` date NOT NULL,
+  `stts_kunjungan_hamil` varchar(30) NOT NULL,
+  `stts_kunjungan_kehamilan` varchar(20) NOT NULL,
+  `pemberian_ttd` varchar(30) NOT NULL,
+  `stts_ibu_hamil` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `antenatal`
+--
+
+INSERT INTO `antenatal` (`id_antenatal`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `tgl_kunjungan`, `stts_kunjungan_hamil`, `stts_kunjungan_kehamilan`, `pemberian_ttd`, `stts_ibu_hamil`) VALUES
+(2, '000001', 'Siti Khodijah', 'Abdullah', 'Sarijadi', '2024-03-24', 'Hamil Lama', 'K1', 'Fe3', 'Hamil'),
+(3, '000002', 'Putri Koala', 'Sidiq', 'Sukajadi', '2024-03-24', 'Hamil Baru', 'K1', 'Fe3', 'Testing');
 
 -- --------------------------------------------------------
 
@@ -83,11 +110,17 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `id_role`, `nama_user`, `username`, `password`, `tgl_lahir`, `alamat`, `nik`, `no_hp`, `email`) VALUES
 (1, 1, 'Valen Rionald', 'admin', '$2y$10$a76t9jE8XVWng6PzFg//zOOWnQOXR8pQZltUnS5ca8Cvj5XxZn/8S', '2002-08-06', 'Jalan Mandor Aleh No. 225 RT.04/RW.04 Kel. Sepanjang Jaya', '123456789123456789', '628941248787', 'vrionald@gmail.com'),
-(2, NULL, 'Bachtiar Ramadhan', 'admin2', '$2y$10$PVXIldFP2k8FHYtOnMCTouukZWnRrBHn/AqfD98YFDNVGYtz5MXe2', NULL, NULL, NULL, NULL, NULL);
+(2, 1, 'Bachtiar Ramadhan', 'admin2', '$2y$10$PVXIldFP2k8FHYtOnMCTouukZWnRrBHn/AqfD98YFDNVGYtz5MXe2', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `antenatal`
+--
+ALTER TABLE `antenatal`
+  ADD PRIMARY KEY (`id_antenatal`);
 
 --
 -- Indexes for table `antrian`
@@ -110,6 +143,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `antenatal`
+--
+ALTER TABLE `antenatal`
+  MODIFY `id_antenatal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `antrian`
