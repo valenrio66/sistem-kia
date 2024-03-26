@@ -40,5 +40,14 @@ $routes->get('/dashboard/antenatal/update/(:segment)', 'Antenatal::renderPageUpd
 $routes->post('/antenatal/update/(:segment)', 'Antenatal::updateAntenatal/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/antenatal/export', 'Antenatal::generatePDF', ['filter' => 'auth']);
 
+// Routes Antenatal
+$routes->get('/dashboard/persalinannifas', 'PersalinanNifas::getAllPersalinanNifas', ['filter' => 'auth']);
+$routes->get('/dashboard/persalinannifas/add', 'PersalinanNifas::renderPageCreatePersalinanNifas', ['filter' => 'auth']);
+$routes->post('/persalinannifas/create', 'PersalinanNifas::createPersalinanNifas', ['filter' => 'auth']);
+$routes->get('/persalinannifas/delete/(:num)', 'PersalinanNifas::deletePersalinanNifas/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/persalinannifas/update/(:segment)', 'PersalinanNifas::renderPageUpdatePersalinanNifas/$1', ['filter' => 'auth']);
+$routes->post('/persalinannifas/update/(:segment)', 'PersalinanNifas::updatePersalinanNifas/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/persalinannifas/export', 'PersalinanNifas::generatePDF', ['filter' => 'auth']);
+
 // Routes Pasien
 $routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);

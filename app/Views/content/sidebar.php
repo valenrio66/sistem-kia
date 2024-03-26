@@ -110,8 +110,8 @@
 							</a>
 						</li>
 
-						<li class="sidebar-item <?= isActive('persalinan', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/persalinan') ?>">
+						<li class="sidebar-item <?= isActive('persalinannifas', $currentPage) ?>">
+							<a class="sidebar-link" href="<?= base_url('/dashboard/persalinannifas') ?>">
 								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Persalinan dan Nifas</span>
 							</a>
 						</li>
