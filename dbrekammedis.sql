@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2024 at 05:02 PM
+-- Generation Time: Mar 26, 2024 at 05:44 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -37,16 +37,18 @@ CREATE TABLE `antenatal` (
   `stts_kunjungan_hamil` varchar(30) NOT NULL,
   `stts_kunjungan_kehamilan` varchar(20) NOT NULL,
   `pemberian_ttd` varchar(30) NOT NULL,
-  `stts_ibu_hamil` varchar(30) NOT NULL
+  `stts_ibu_hamil` varchar(30) NOT NULL,
+  `catat_buku_kia` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `antenatal`
 --
 
-INSERT INTO `antenatal` (`id_antenatal`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `tgl_kunjungan`, `stts_kunjungan_hamil`, `stts_kunjungan_kehamilan`, `pemberian_ttd`, `stts_ibu_hamil`) VALUES
-(2, '000001', 'Siti Khodijah', 'Abdullah', 'Sarijadi', '2024-03-24', 'Hamil Lama', 'K1', 'Fe3', 'Hamil'),
-(3, '000002', 'Putri Koala', 'Sidiq', 'Sukajadi', '2024-03-24', 'Hamil Baru', 'K1', 'Fe3', 'Testing');
+INSERT INTO `antenatal` (`id_antenatal`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `tgl_kunjungan`, `stts_kunjungan_hamil`, `stts_kunjungan_kehamilan`, `pemberian_ttd`, `stts_ibu_hamil`, `catat_buku_kia`) VALUES
+(2, '000001', 'Siti Khodijah', 'Abdullah', 'Sarijadi', '2024-03-24', 'Hamil Lama', 'K1', 'Fe3', 'Hamil', 'Ya'),
+(3, '000002', 'Putri Koala', 'Sidiq', 'Sukajadi', '2024-03-24', 'Hamil Baru', 'K1', 'Fe3', 'Testing', 'Tidak'),
+(4, '000003', 'Euis Rohmat', 'Eman', 'Sarijadi', '2024-03-26', 'Hamil Baru', 'K1', 'Fe1', 'Testing', 'Ya');
 
 -- --------------------------------------------------------
 
@@ -59,6 +61,40 @@ CREATE TABLE `antrian` (
   `id_user` int(11) NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `persalinan_nifas`
+--
+
+CREATE TABLE `persalinan_nifas` (
+  `id_persalinan_nifas` int(11) NOT NULL,
+  `no_rm` varchar(50) NOT NULL,
+  `nama_pasien` varchar(50) NOT NULL,
+  `nama_suami` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `catat_buku_kia` varchar(11) NOT NULL,
+  `tgl_jam_bersalin` datetime NOT NULL,
+  `penolong_persalinan` varchar(20) NOT NULL,
+  `metode_persalinan` varchar(20) NOT NULL,
+  `keadaan_ibu` varchar(20) NOT NULL,
+  `status_komplikasi` varchar(20) NOT NULL,
+  `jenis_kelamin_bayi` varchar(20) NOT NULL,
+  `status_bayi` varchar(20) NOT NULL,
+  `keadaan_bayi` varchar(20) NOT NULL,
+  `stts_komplikasi_neonatus` varchar(20) NOT NULL,
+  `kunjungan_nifas` varchar(11) NOT NULL,
+  `vit_a_nifas` varchar(11) NOT NULL,
+  `kunjungan_neonatus` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `persalinan_nifas`
+--
+
+INSERT INTO `persalinan_nifas` (`id_persalinan_nifas`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `catat_buku_kia`, `tgl_jam_bersalin`, `penolong_persalinan`, `metode_persalinan`, `keadaan_ibu`, `status_komplikasi`, `jenis_kelamin_bayi`, `status_bayi`, `keadaan_bayi`, `stts_komplikasi_neonatus`, `kunjungan_nifas`, `vit_a_nifas`, `kunjungan_neonatus`) VALUES
+(1, '000001', 'Siti', 'Rohman', 'Sarijadi', 'Ya', '2024-03-26 23:15:10', 'Dokter SPOG', 'Normal', 'Normal', 'Normal', 'Laki - Laki', 'Normal', 'Normal', 'Normal', 'KF1', 'Ya', 'KN1');
 
 -- --------------------------------------------------------
 
@@ -129,6 +165,12 @@ ALTER TABLE `antrian`
   ADD PRIMARY KEY (`id_antrian`);
 
 --
+-- Indexes for table `persalinan_nifas`
+--
+ALTER TABLE `persalinan_nifas`
+  ADD PRIMARY KEY (`id_persalinan_nifas`);
+
+--
 -- Indexes for table `role`
 --
 ALTER TABLE `role`
@@ -148,13 +190,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `antenatal`
 --
 ALTER TABLE `antenatal`
-  MODIFY `id_antenatal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_antenatal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `antrian`
 --
 ALTER TABLE `antrian`
   MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `persalinan_nifas`
+--
+ALTER TABLE `persalinan_nifas`
+  MODIFY `id_persalinan_nifas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `role`
