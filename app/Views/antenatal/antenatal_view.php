@@ -38,6 +38,7 @@
 										<th>Nama Suami</th>
 										<th>Alamat</th>
 										<th>Tanggal Kunjungan</th>
+										<th>Catat Buku KIA</th>
 										<th>Status Kunjungan Hamil</th>
 										<th>Status Kunjungan Kehamilan</th>
 										<th>Pemberian TTD</th>
@@ -65,6 +66,9 @@
 											</td>
 											<td>
 												<?= $ant['tgl_kunjungan'] ?>
+											</td>
+											<td>
+												<?= $ant['catat_buku_kia'] ?>
 											</td>
 											<td>
 												<?= $ant['stts_kunjungan_hamil'] ?>

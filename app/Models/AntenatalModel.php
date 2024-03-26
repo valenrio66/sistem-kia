@@ -8,7 +8,7 @@ class AntenatalModel extends Model
 {
 	protected $table = 'antenatal';
 	protected $primaryKey = 'id_antenatal';
-	protected $allowedFields = ['no_rm', 'nama_pasien', 'nama_suami', 'alamat', 'tgl_kunjungan', 'stts_kunjungan_hamil', 'stts_kunjungan_kehamilan', 'pemberian_ttd', 'stts_ibu_hamil'];
+	protected $allowedFields = ['no_rm', 'nama_pasien', 'nama_suami', 'alamat', 'tgl_kunjungan', 'stts_kunjungan_hamil', 'stts_kunjungan_kehamilan', 'pemberian_ttd', 'stts_ibu_hamil', 'catat_buku_kia'];
 
 	public function createAntenatalModel($data)
 	{

@@ -33,6 +33,11 @@
 							<textarea class="form-control" id="alamat" name="alamat" cols="30" rows="3"><?= esc($antenatals['alamat']) ?></textarea>
 							<h5 class="card-title">Tanggal Kunjungan</h5>
 							<input type="date" class="form-control" id="tgl_kunjungan" name="tgl_kunjungan" value="<?= esc($antenatals['tgl_kunjungan']) ?>" />
+							<h5 class="card-title mt-2">Catat Buku KIA</h5>
+							<select id="catat_buku_kia" name="catat_buku_kia" class="form-control">
+								<option value="Ya" <?= ($antenatals['catat_buku_kia'] == 'Ya') ? 'selected' : '' ?>>Ya</option>
+								<option value="Tidak" <?= ($antenatals['catat_buku_kia'] == 'Tidak') ? 'selected' : '' ?>>Tidak</option>
+							</select>
 							<div class="row mt-1">
 								<div class="col-md-6">
 									<!-- Inputan Status Kunjungan Hamil -->
