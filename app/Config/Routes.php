@@ -40,7 +40,7 @@ $routes->get('/dashboard/antenatal/update/(:segment)', 'Antenatal::renderPageUpd
 $routes->post('/antenatal/update/(:segment)', 'Antenatal::updateAntenatal/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/antenatal/export', 'Antenatal::generatePDF', ['filter' => 'auth']);
 
-// Routes Antenatal
+// Routes Persalinan Nifas
 $routes->get('/dashboard/persalinannifas', 'PersalinanNifas::getAllPersalinanNifas', ['filter' => 'auth']);
 $routes->get('/dashboard/persalinannifas/add', 'PersalinanNifas::renderPageCreatePersalinanNifas', ['filter' => 'auth']);
 $routes->post('/persalinannifas/create', 'PersalinanNifas::createPersalinanNifas', ['filter' => 'auth']);
@@ -48,6 +48,15 @@ $routes->get('/persalinannifas/delete/(:num)', 'PersalinanNifas::deletePersalina
 $routes->get('/dashboard/persalinannifas/update/(:segment)', 'PersalinanNifas::renderPageUpdatePersalinanNifas/$1', ['filter' => 'auth']);
 $routes->post('/persalinannifas/update/(:segment)', 'PersalinanNifas::updatePersalinanNifas/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/persalinannifas/export', 'PersalinanNifas::generatePDF', ['filter' => 'auth']);
+
+// Routes Kematian Maternal
+$routes->get('/dashboard/kematianmaternal', 'KematianMaternal::getAllKematianMaternal', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_maternal/add', 'KematianMaternal::renderPageCreateKematianMaternal', ['filter' => 'auth']);
+$routes->post('/kematian_maternal/create', 'KematianMaternal::createKematianMaternal', ['filter' => 'auth']);
+$routes->get('/kematian_maternal/delete/(:num)', 'KematianMaternal::deleteKematianMaternal/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_maternal/update/(:segment)', 'KematianMaternal::renderPageUpdateKematianMaternal/$1', ['filter' => 'auth']);
+$routes->post('/kematian_maternal/update/(:segment)', 'KematianMaternal::updateKematianMaternal/$1', ['filter' => 'auth']);
+// $routes->get('/dashboard/kematian_maternal/export', 'PersalinanNifas::generatePDF', ['filter' => 'auth']);
 
 // Routes Pasien
 $routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);
