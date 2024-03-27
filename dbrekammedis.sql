@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2024 at 05:44 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Mar 27, 2024 at 07:12 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,6 +61,32 @@ CREATE TABLE `antrian` (
   `id_user` int(11) NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kematian_maternal`
+--
+
+CREATE TABLE `kematian_maternal` (
+  `id_kematian_maternal` int(11) NOT NULL,
+  `no_rm` varchar(50) NOT NULL,
+  `nama_pasien` varchar(50) NOT NULL,
+  `nama_suami` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `catat_buku_kia` varchar(11) NOT NULL,
+  `tanggal_kematian` date NOT NULL,
+  `jam_kematian` time NOT NULL,
+  `penyebab_kematian` varchar(255) NOT NULL,
+  `masa_kematian` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kematian_maternal`
+--
+
+INSERT INTO `kematian_maternal` (`id_kematian_maternal`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `catat_buku_kia`, `tanggal_kematian`, `jam_kematian`, `penyebab_kematian`, `masa_kematian`) VALUES
+(1, '1', 'Keysha', 'Belum Ketemu', 'Pasir Koja', 'Catatan', '2024-03-28', '06:33:45', 'Kecanduan Alkohol', '1 Tahun');
 
 -- --------------------------------------------------------
 
@@ -146,7 +172,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `id_role`, `nama_user`, `username`, `password`, `tgl_lahir`, `alamat`, `nik`, `no_hp`, `email`) VALUES
 (1, 1, 'Valen Rionald', 'admin', '$2y$10$a76t9jE8XVWng6PzFg//zOOWnQOXR8pQZltUnS5ca8Cvj5XxZn/8S', '2002-08-06', 'Jalan Mandor Aleh No. 225 RT.04/RW.04 Kel. Sepanjang Jaya', '123456789123456789', '628941248787', 'vrionald@gmail.com'),
-(2, 1, 'Bachtiar Ramadhan', 'admin2', '$2y$10$PVXIldFP2k8FHYtOnMCTouukZWnRrBHn/AqfD98YFDNVGYtz5MXe2', NULL, NULL, NULL, NULL, NULL);
+(2, 1, 'Bachtiar Ramadhan', 'admin2', '$2y$10$PVXIldFP2k8FHYtOnMCTouukZWnRrBHn/AqfD98YFDNVGYtz5MXe2', '2000-12-21', 'Bandung, Jawa Barat', '3208072102000006', '6282513921331', 'bachtiarramadhan26@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -163,6 +189,12 @@ ALTER TABLE `antenatal`
 --
 ALTER TABLE `antrian`
   ADD PRIMARY KEY (`id_antrian`);
+
+--
+-- Indexes for table `kematian_maternal`
+--
+ALTER TABLE `kematian_maternal`
+  ADD PRIMARY KEY (`id_kematian_maternal`);
 
 --
 -- Indexes for table `persalinan_nifas`
@@ -197,6 +229,12 @@ ALTER TABLE `antenatal`
 --
 ALTER TABLE `antrian`
   MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kematian_maternal`
+--
+ALTER TABLE `kematian_maternal`
+  MODIFY `id_kematian_maternal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `persalinan_nifas`

@@ -116,8 +116,8 @@
 							</a>
 						</li>
 
-						<li class="sidebar-item <?= isActive('kematianmaternal', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/kematianmaternal') ?>">
+						<li class="sidebar-item <?= isActive('kematian_maternal', $currentPage) ?>">
+							<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_maternal') ?>">
 								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Kematian Maternal</span>
 							</a>
 						</li>
