@@ -50,7 +50,7 @@ $routes->post('/persalinannifas/update/(:segment)', 'PersalinanNifas::updatePers
 $routes->get('/dashboard/persalinannifas/export', 'PersalinanNifas::generatePDF', ['filter' => 'auth']);
 
 // Routes Kematian Maternal
-$routes->get('/dashboard/kematianmaternal', 'KematianMaternal::getAllKematianMaternal', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_maternal', 'KematianMaternal::getAllKematianMaternal', ['filter' => 'auth']);
 $routes->get('/dashboard/kematian_maternal/add', 'KematianMaternal::renderPageCreateKematianMaternal', ['filter' => 'auth']);
 $routes->post('/kematian_maternal/create', 'KematianMaternal::createKematianMaternal', ['filter' => 'auth']);
 $routes->get('/kematian_maternal/delete/(:num)', 'KematianMaternal::deleteKematianMaternal/$1', ['filter' => 'auth']);
