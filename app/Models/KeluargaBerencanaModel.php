@@ -9,7 +9,7 @@ class KeluargaBerencanaModel extends Model
 	protected $table = 'keluarga_berencana';
 	protected $primaryKey = 'id_kb';
 	protected $allowedFields = ['no_rm', 'nama_pasien', 'nama_suami', 'alamat', 'catat_buku_kia', 'tgl_kunjungan', 'jumlah_anak', 'status', 'metode'];
-	
+
 	public function createKeluargaBerencanaModel($data)
 	{
 		return $this->insert($data);
@@ -20,7 +20,7 @@ class KeluargaBerencanaModel extends Model
 		return $this->update($id, $data);
 	}
 
-	public function deleteKematianMaternalModel($id)
+	public function deleteKeluargaBerencanaModel($id)
 	{
 		return $this->delete($id);
 	}

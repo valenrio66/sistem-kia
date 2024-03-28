@@ -4,14 +4,14 @@
 <main class="content">
 	<div class="container-fluid p-0">
 		<h5 class="right-aligned" style="float: right">
-			<a href="#">Home</a> / <a href="#">Kematian Maternal</a> / Data Kematian Maternal
+			<a href="#">Home</a> / <a href="#">Keluarga Berencana</a> / Data Keluarga Berencana
 		</h5>
-		<h1 class="h3 mb-3"><b>Data Kematian Maternal</b></h1>
+		<h1 class="h3 mb-3"><b>Data Keluarga Berencana</b></h1>
 		<div class="col-md-6 mb-3">
 			<div class="d-flex justify-content-start">
 				<a href="<?= base_url('/dashboard/keluarga_berencana/add') ?>" type="button" class="btn btn-info me-2">
 					<i class="align-middle" data-feather="plus-circle"></i>
-					Tambah Data Kematian Maternal
+					Tambah Data Keluarga Berencana
 				</a>
 				<a href="<?= base_url('/dashboard/keluarga_berencana/export') ?>" type="button" class="btn btn-success me-2">
 					<i class="align-middle" data-feather="file-text"></i>
@@ -24,7 +24,7 @@
 				<div class="card">
 					<div class="card-header">
 						<div class="row no-gutters" style="height: 40px">
-							<h1 class="h3 mt-2">Data Kematian Maternal</h1>
+							<h1 class="h3 mt-2">Data Keluarga Berencana</h1>
 						</div>
 
 						<hr />
@@ -34,14 +34,14 @@
 									<tr style="text-align: center; vertical-align: middle">
 										<th hidden></th>
 										<th>Nomor RM</th>
-										<th>Nama Lengkap Pasien</th>
+										<th>Nama Peserta KB</th>
 										<th>Nama Suami</th>
 										<th>Alamat</th>
+										<th>Jumlah Anak</th>
+										<th>Status Peserta KB</th>
+										<th>Tanggal Kunjungan</th>
 										<th>Catat Buku KIA</th>
-										<th>Tanggal Kematian</th>
-										<th>Jam Kematian</th>
-                                        <th>Penyebab Kematian</th>
-                                        <th>Masa Kematian</th>
+										<th>Metode Kontrasepsi</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -63,20 +63,20 @@
 												<?= $kb['alamat'] ?>
 											</td>
 											<td>
+												<?= $kb['jumlah_anak'] ?>
+											</td>
+											<td>
+												<?= $kb['status'] ?>
+											</td>
+											<td>
+												<?= $kb['tgl_kunjungan'] ?>
+											</td>
+											<td>
 												<?= $kb['catat_buku_kia'] ?>
 											</td>
 											<td>
-												<?= $kb['jumlah_anak'] ?>
-                                            </td>
-                                            <td>
-												<?= $kb['tgl_kunjungan'] ?>
-                                            </td>
-                                            <td>
 												<?= $kb['metode'] ?>
-                                            </td>
-                                            <td>
-												<?= $kb['status'] ?>
-                                            </td>
+											</td>
 											<td>
 												<!-- Tambahkan tombol atau link aksi sesuai kebutuhan -->
 												<!-- Contoh: -->

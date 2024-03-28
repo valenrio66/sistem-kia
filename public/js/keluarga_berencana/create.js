@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 	// Tangkap formulir
-	const form = document.querySelector('#postKematianMaternal');
+	const form = document.querySelector('#postKeluargaBerencana');
 
 	// Tambahkan event listener untuk event submit
 	form.addEventListener('submit', function (event) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		// Tampilkan SweetAlert konfirmasi
 		Swal.fire({
 			title: 'Konfirmasi',
-			text: 'Apakah Anda yakin ingin menambahkan data kematian maternal ini?',
+			text: 'Apakah Anda yakin ingin menambahkan data Keluarga Berencana ini?',
 			icon: 'question',
 			showCancelButton: true,
 			confirmButtonText: 'Ya',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				form.submit();
 				Swal.fire({
 					title: 'Sukses!',
-					text: 'Berhasil menambahkan kematian maternal ini.',
+					text: 'Berhasil menambahkan Keluarga Berencana ini.',
 					icon: 'success',
 					showConfirmButton: false,
 					timer: 1500
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			} else {
 				Swal.fire({
 					title: 'Gagal!',
-					text: 'Gagal menambahkan data kematian maternal ini.',
+					text: 'Gagal menambahkan data Keluarga Berencana ini.',
 					icon: 'error'
 				})
 			}

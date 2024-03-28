@@ -8,7 +8,7 @@ use Dompdf\Options;
 
 class KeluargaBerencana extends BaseController
 {
-    // Function Get All Role
+	// Function Get All Role
 	public function getAllKeluargaBerencana(): string
 	{
 		$kbModel = new KeluargaBerencanaModel();
@@ -69,5 +69,32 @@ class KeluargaBerencana extends BaseController
 			echo "Gagal Menghapus Data Keluarga Berencana";
 			return redirect()->back()->with('message', 'Gagal menghapus data Keluarga Berencana');
 		}
+	}
+
+	public function generatePDF()
+	{
+		$keluargaBerencanaModel = new KeluargaBerencanaModel();
+		$data['keluarga_berencana'] = $keluargaBerencanaModel->findAll();
+
+		// Load view content into a variable
+		$html = view('keluarga_berencana/keluarga_berencana_pdf', $data);
+
+		// Instantiate Dompdf with options
+		$options = new Options();
+		$options->set('isHtml5ParserEnabled', true);
+		$options->set('isPhpEnabled', true);
+		$dompdf = new Dompdf($options);
+
+		// Load HTML content
+		$dompdf->loadHtml($html);
+
+		// Set paper size and orientation
+		$dompdf->setPaper('A4', 'portrait');
+
+		// Render the HTML as PDF
+		$dompdf->render();
+
+		// Output the generated PDF (inline or download)
+		$dompdf->stream('Laporan Keluarga Berencana.pdf', ['Attachment' => false]);
 	}
 }

@@ -8,7 +8,7 @@ use Dompdf\Options;
 
 class KematianMaternal extends BaseController
 {
-    // Function Get All Role
+	// Function Get All Role
 	public function getAllKematianMaternal(): string
 	{
 		$kematianMaternalModel = new KematianMaternalModel();
@@ -69,5 +69,32 @@ class KematianMaternal extends BaseController
 			echo "Gagal Menghapus Data Kematian Maternal";
 			return redirect()->back()->with('message', 'Gagal menghapus data Kematian Maternal');
 		}
+	}
+
+	public function generatePDF()
+	{
+		$kematianMaternalModel = new KematianMaternalModel();
+		$data['kematian_maternals'] = $kematianMaternalModel->findAll();
+
+		// Load view content into a variable
+		$html = view('kematian_maternal/kematian_maternal_pdf', $data);
+
+		// Instantiate Dompdf with options
+		$options = new Options();
+		$options->set('isHtml5ParserEnabled', true);
+		$options->set('isPhpEnabled', true);
+		$dompdf = new Dompdf($options);
+
+		// Load HTML content
+		$dompdf->loadHtml($html);
+
+		// Set paper size and orientation
+		$dompdf->setPaper('A4', 'portrait');
+
+		// Render the HTML as PDF
+		$dompdf->render();
+
+		// Output the generated PDF (inline or download)
+		$dompdf->stream('Laporan Kematian Maternal.pdf', ['Attachment' => false]);
 	}
 }

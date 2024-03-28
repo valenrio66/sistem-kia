@@ -56,7 +56,7 @@ $routes->post('/kematian_maternal/create', 'KematianMaternal::createKematianMate
 $routes->get('/kematian_maternal/delete/(:num)', 'KematianMaternal::deleteKematianMaternal/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/kematian_maternal/update/(:segment)', 'KematianMaternal::renderPageUpdateKematianMaternal/$1', ['filter' => 'auth']);
 $routes->post('/kematian_maternal/update/(:segment)', 'KematianMaternal::updateKematianMaternal/$1', ['filter' => 'auth']);
-// $routes->get('/dashboard/kematian_maternal/export', 'PersalinanNifas::generatePDF', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_maternal/export', 'KematianMaternal::generatePDF', ['filter' => 'auth']);
 
 // Routes Keluarga Berencana
 $routes->get('/dashboard/keluarga_berencana', 'KeluargaBerencana::getAllKeluargaBerencana', ['filter' => 'auth']);
@@ -65,7 +65,7 @@ $routes->post('/keluarga_berencana/create', 'KeluargaBerencana::createKeluargaBe
 $routes->get('/keluarga_berencana/delete/(:num)', 'KeluargaBerencana::deleteKeluargaBerencana/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/keluarga_berencana/update/(:segment)', 'KeluargaBerencana::renderPageUpdateKeluargaBerencana/$1', ['filter' => 'auth']);
 $routes->post('/keluarga_berencana/update/(:segment)', 'KeluargaBerencana::updateKeluargaBerencana/$1', ['filter' => 'auth']);
-// $routes->get('/dashboard/keluarga_berencana/export', 'PersalinanNifas::generatePDF', ['filter' => 'auth']);
+$routes->get('/dashboard/keluarga_berencana/export', 'KeluargaBerencana::generatePDF', ['filter' => 'auth']);
 
 // Routes Pasien
 $routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);
