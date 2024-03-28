@@ -67,5 +67,14 @@ $routes->get('/dashboard/keluarga_berencana/update/(:segment)', 'KeluargaBerenca
 $routes->post('/keluarga_berencana/update/(:segment)', 'KeluargaBerencana::updateKeluargaBerencana/$1', ['filter' => 'auth']);
 $routes->get('/dashboard/keluarga_berencana/export', 'KeluargaBerencana::generatePDF', ['filter' => 'auth']);
 
+// Routes Kematian Bayi
+$routes->get('/dashboard/kematian_bayi', 'KematianBayi::getAllKematianBayi', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_bayi/add', 'KematianBayi::renderPageCreateKematianBayi', ['filter' => 'auth']);
+$routes->post('/kematian_bayi/create', 'KematianBayi::createKematianBayi', ['filter' => 'auth']);
+$routes->get('/kematian_bayi/delete/(:num)', 'KematianBayi::deleteKematianBayi/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_bayi/update/(:segment)', 'KematianBayi::renderPageUpdateKematianBayi/$1', ['filter' => 'auth']);
+$routes->post('/kematian_bayi/update/(:segment)', 'KematianBayi::updateKematianBayi/$1', ['filter' => 'auth']);
+$routes->get('/dashboard/kematian_bayi/export', 'KematianBayi::generatePDF', ['filter' => 'auth']);
+
 // Routes Pasien
 $routes->get('/dashboard/pasien/antrian_create', 'Pasien::renderPageCreateAntrian', ['filter' => 'auth']);

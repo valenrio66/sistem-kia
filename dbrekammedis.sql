@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2024 at 08:32 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Mar 28, 2024 at 11:08 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,6 +87,34 @@ CREATE TABLE `keluarga_berencana` (
 
 INSERT INTO `keluarga_berencana` (`id_kb`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `jumlah_anak`, `status`, `tgl_kunjungan`, `catat_buku_kia`, `metode`) VALUES
 (2, '000001', 'Euis', 'Abdullah', 'Sarijadi', 2, 'Peserta KB Aktif', '2024-03-29', 'Ya', 'Kondom');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kematian_bayi`
+--
+
+CREATE TABLE `kematian_bayi` (
+  `id_kematian_bayi` int(11) NOT NULL,
+  `no_rm` varchar(50) NOT NULL,
+  `nama_pasien` varchar(50) NOT NULL,
+  `umur` int(11) NOT NULL,
+  `jenis_kelamin` varchar(50) NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `nama_ibu` varchar(50) NOT NULL,
+  `nama_ayah` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `catat_buku_kia` varchar(50) NOT NULL,
+  `tanggal_jam_kematian` datetime NOT NULL,
+  `penyebab_kematian` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kematian_bayi`
+--
+
+INSERT INTO `kematian_bayi` (`id_kematian_bayi`, `no_rm`, `nama_pasien`, `umur`, `jenis_kelamin`, `tgl_lahir`, `nama_ibu`, `nama_ayah`, `alamat`, `catat_buku_kia`, `tanggal_jam_kematian`, `penyebab_kematian`) VALUES
+(1, '1', 'test', 1, 'test', '2024-03-29', 'test', 'test', 'test', 'test', '2024-03-28 22:52:33', 'test');
 
 -- --------------------------------------------------------
 
@@ -223,6 +251,12 @@ ALTER TABLE `keluarga_berencana`
   ADD PRIMARY KEY (`id_kb`);
 
 --
+-- Indexes for table `kematian_bayi`
+--
+ALTER TABLE `kematian_bayi`
+  ADD PRIMARY KEY (`id_kematian_bayi`);
+
+--
 -- Indexes for table `kematian_maternal`
 --
 ALTER TABLE `kematian_maternal`
@@ -267,6 +301,12 @@ ALTER TABLE `antrian`
 --
 ALTER TABLE `keluarga_berencana`
   MODIFY `id_kb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kematian_bayi`
+--
+ALTER TABLE `kematian_bayi`
+  MODIFY `id_kematian_bayi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kematian_maternal`

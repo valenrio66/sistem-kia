@@ -132,8 +132,8 @@
 							Data Kematian Neonatal Bayi dan Balita
 						</li>
 
-						<li class="sidebar-item <?= isActive('user', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/user') ?>">
+						<li class="sidebar-item <?= isActive('kematian_bayi', $currentPage) ?>">
+							<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_bayi') ?>">
 								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Kematian</span>
 							</a>
 						</li>
