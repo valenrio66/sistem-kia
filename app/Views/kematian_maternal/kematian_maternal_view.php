@@ -80,8 +80,8 @@
 											<td>
 												<!-- Tambahkan tombol atau link aksi sesuai kebutuhan -->
 												<!-- Contoh: -->
-												<a href="<?= base_url('/dashboard/kematian_maternal/update/' . $pn['id_kematian_maternal']) ?>" class="btn btn-info">Edit</a>
-												<a href="<?= base_url('kematian_maternal/delete/' . $pn['id_kematian_maternal']) ?>" onclick="return confirmDelete(event)" class="btn btn-danger">Delete</a>
+												<a href="<?= base_url('/dashboard/kematian_maternal/update/' . $km['id_kematian_maternal']) ?>" class="btn btn-info">Edit</a>
+												<a href="<?= base_url('kematian_maternal/delete/' . $km['id_kematian_maternal']) ?>" onclick="return confirmDelete(event)" class="btn btn-danger">Delete</a>
 											</td>
 										</tr>
 									<?php endforeach; ?>
