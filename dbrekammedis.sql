@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2024 at 07:46 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Mar 28, 2024 at 08:32 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,7 +48,7 @@ CREATE TABLE `antenatal` (
 INSERT INTO `antenatal` (`id_antenatal`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `tgl_kunjungan`, `stts_kunjungan_hamil`, `stts_kunjungan_kehamilan`, `pemberian_ttd`, `stts_ibu_hamil`, `catat_buku_kia`) VALUES
 (2, '000001', 'Siti Khodijah', 'Abdullah', 'Sarijadi', '2024-03-24', 'Hamil Lama', 'K1', 'Fe3', 'Hamil', 'Ya'),
 (3, '000002', 'Putri Koala', 'Sidiq', 'Sukajadi', '2024-03-24', 'Hamil Baru', 'K1', 'Fe3', 'Testing', 'Tidak'),
-(4, '000003', 'Euis Rohmat', 'Eman', 'Sarijadi', '2024-03-26', 'Hamil Baru', 'K1', 'Fe1', 'Testing', 'Ya');
+(4, '000003', 'Euis Rohmat', 'Eman', 'Sarijadi', '2024-03-26', 'Hamil Baru', 'K1', 'Fe3', 'Testing', 'Ya');
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `keluarga_berencana` (
 --
 
 INSERT INTO `keluarga_berencana` (`id_kb`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `jumlah_anak`, `status`, `tgl_kunjungan`, `catat_buku_kia`, `metode`) VALUES
-(1, 'test', 'test', 'test', 'test', 2, 'test', '2024-03-28', 'test', 'test');
+(2, '000001', 'Euis', 'Abdullah', 'Sarijadi', 2, 'Peserta KB Aktif', '2024-03-29', 'Ya', 'Kondom');
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,7 @@ CREATE TABLE `kematian_maternal` (
 --
 
 INSERT INTO `kematian_maternal` (`id_kematian_maternal`, `no_rm`, `nama_pasien`, `nama_suami`, `alamat`, `catat_buku_kia`, `tanggal_kematian`, `jam_kematian`, `penyebab_kematian`, `masa_kematian`) VALUES
-(1, '1', 'Keysha', 'Belum Ketemu', 'Pasir Koja', 'Tidak', '2024-03-28', '06:33:45', 'Kecanduan Alkohol', '1 Tahun');
+(3, '000002', 'Putri Koala', 'Abdullah', 'Sarijadi', 'Ya', '2024-03-29', '02:30:00', 'Kelaparan', '10 Tahun');
 
 -- --------------------------------------------------------
 
@@ -266,13 +266,13 @@ ALTER TABLE `antrian`
 -- AUTO_INCREMENT for table `keluarga_berencana`
 --
 ALTER TABLE `keluarga_berencana`
-  MODIFY `id_kb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kematian_maternal`
 --
 ALTER TABLE `kematian_maternal`
-  MODIFY `id_kematian_maternal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kematian_maternal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `persalinan_nifas`
