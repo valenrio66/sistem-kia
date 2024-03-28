@@ -123,7 +123,7 @@
 						</li>
 
 						<li class="sidebar-item <?= isActive('keluargaberencana', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/keluargaberencana') ?>">
+							<a class="sidebar-link" href="<?= base_url('/dashboard/keluarga_berencana') ?>">
 								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Keluarga Berencana</span>
 							</a>
 						</li>
