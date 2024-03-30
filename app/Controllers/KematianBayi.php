@@ -71,30 +71,30 @@ class KematianBayi extends BaseController
 		}
 	}
 
-	// public function generatePDF()
-	// {
-	// 	$keluargaBerencanaModel = new KeluargaBerencanaModel();
-	// 	$data['keluarga_berencana'] = $keluargaBerencanaModel->findAll();
+	public function generatePDF()
+	{
+		$kematianBayiModel = new KematianBayiModel();
+		$data['kematian_bayi'] = $kematianBayiModel->findAll();
 
-	// 	// Load view content into a variable
-	// 	$html = view('keluarga_berencana/keluarga_berencana_pdf', $data);
+		// Load view content into a variable
+		$html = view('kematian_bayi/kematian_bayi_pdf', $data);
 
-	// 	// Instantiate Dompdf with options
-	// 	$options = new Options();
-	// 	$options->set('isHtml5ParserEnabled', true);
-	// 	$options->set('isPhpEnabled', true);
-	// 	$dompdf = new Dompdf($options);
+		// Instantiate Dompdf with options
+		$options = new Options();
+		$options->set('isHtml5ParserEnabled', true);
+		$options->set('isPhpEnabled', true);
+		$dompdf = new Dompdf($options);
 
-	// 	// Load HTML content
-	// 	$dompdf->loadHtml($html);
+		// Load HTML content
+		$dompdf->loadHtml($html);
 
-	// 	// Set paper size and orientation
-	// 	$dompdf->setPaper('A4', 'portrait');
+		// Set paper size and orientation
+		$dompdf->setPaper('A4', 'portrait');
 
-	// 	// Render the HTML as PDF
-	// 	$dompdf->render();
+		// Render the HTML as PDF
+		$dompdf->render();
 
-	// 	// Output the generated PDF (inline or download)
-	// 	$dompdf->stream('Laporan Keluarga Berencana.pdf', ['Attachment' => false]);
-	// }
+		// Output the generated PDF (inline or download)
+		$dompdf->stream('Laporan Kematian Neonatal.pdf', ['Attachment' => false]);
+	}
 }
