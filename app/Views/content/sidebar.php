@@ -134,7 +134,7 @@
 
 						<li class="sidebar-item <?= isActive('kematian_bayi', $currentPage) ?>">
 							<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_bayi') ?>">
-								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Kematian</span>
+								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Kematian</span>
 							</a>
 						</li>
 
@@ -163,7 +163,7 @@
 						</li>
 					<?php endif; ?>
 
-					<li class="sidebar-header">
+					<!-- <li class="sidebar-header">
 						Submenu Umum
 					</li>
 
@@ -171,7 +171,7 @@
 						<a class="sidebar-link" href="<?= base_url('/dashboard/laporan') ?>">
 							<i class="align-middle" data-feather="book"></i> <span class="align-middle">Laporan KIA</span>
 						</a>
-					</li>
+					</li> -->
 				</ul>
 
 				<div class="sidebar-cta">
