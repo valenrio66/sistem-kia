@@ -13,7 +13,7 @@ $routes->post('auth/attemptRegister', 'Auth::attemptRegister');
 $routes->get('/login', 'Auth::login');
 $routes->post('auth/attemptLogin', 'Auth::attemptLogin');
 $routes->get('auth/logout', 'Auth::logout');
-
+    
 // Routes User
 $routes->get('/dashboard/user', 'User::getAllUser', ['filter' => 'auth']);
 $routes->get('/dashboard/user/detail/(:segment)', 'User::getUserById/$1', ['filter' => 'auth']);
