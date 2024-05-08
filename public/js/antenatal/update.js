@@ -18,14 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		}).then((result) => {
 			// Jika pengguna mengonfirmasi, kirimkan formulir
 			if (result.isConfirmed) {
-				form.submit();
 				Swal.fire({
 					title: 'Sukses!',
 					text: 'Data Antenatal berhasil diubah.',
 					icon: 'success',
 					showConfirmButton: false,
-					timer: 1500
-				})
+					timer: 1000
+				}).then(() => {
+					form.submit();
+				});
 			} else {
 				Swal.fire({
 					title: 'Gagal!',

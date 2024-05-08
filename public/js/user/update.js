@@ -18,14 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }).then((result) => {
             // Jika pengguna mengonfirmasi, kirimkan formulir
             if (result.isConfirmed) {
-                form.submit();
                 Swal.fire({
                     title: 'Sukses!',
                     text: 'Berhasil mengubah user ini.',
                     icon: 'success',
                     showConfirmButton: false,
                     timer: 1500
-                })
+                }).then(() => {
+                    form.submit();
+                });
             } else {
                 Swal.fire({
                     title: 'Gagal!',

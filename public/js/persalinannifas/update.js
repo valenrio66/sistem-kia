@@ -18,14 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		}).then((result) => {
 			// Jika pengguna mengonfirmasi, kirimkan formulir
 			if (result.isConfirmed) {
-				form.submit();
 				Swal.fire({
 					title: 'Sukses!',
 					text: 'Data Persalinan dan Nifas berhasil diubah.',
 					icon: 'success',
 					showConfirmButton: false,
 					timer: 1500
-				})
+				}).then(() => {
+					form.submit();
+				});
 			} else {
 				Swal.fire({
 					title: 'Gagal!',
