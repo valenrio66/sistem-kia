@@ -108,7 +108,7 @@ class Antenatal extends BaseController
 		$dompdf->loadHtml($html);
 
 		// Set paper size and orientation
-		$dompdf->setPaper('A4', 'portrait');
+		$dompdf->setPaper('A4', 'landscape');
 
 		// Render the HTML as PDF
 		$dompdf->render();
