@@ -25,10 +25,10 @@
 									<!-- Inputan Umur -->
 									<h5 class="card-title mt-2">Umur</h5>
 									<select id="umur" name="umur" class="form-control">
-                                        <option value="neonatal" <?= ($kematian_bayi['umur'] == 'neonatal') ? 'selected' : '' ?>>Neonatal (0-7 Hari)</option>
-								        <option value="neonatal_lanjut" <?= ($kematian_bayi['umur'] == 'neonatal_lanjut') ? 'selected' : '' ?>>Neonatal Lanjut (8-28 Hari)</option>
-                                        <option value="bayi" <?= ($kematian_bayi['umur'] == 'bayi') ? 'selected' : '' ?>>Bayi (29 Hari - 11 Bulan)</option>
-                                        <option value="balita" <?= ($kematian_bayi['umur'] == 'balita') ? 'selected' : '' ?>>Balita (12 Bulan - 59 Bulan)</option>
+                                        <option value="Neonatal" <?= ($kematian_bayi['umur'] == 'Neonatal') ? 'selected' : '' ?>>Neonatal (0-7 Hari)</option>
+								        <option value="Neonatal Lanjut" <?= ($kematian_bayi['umur'] == 'Neonatal Lanjut') ? 'selected' : '' ?>>Neonatal Lanjut (8-28 Hari)</option>
+                                        <option value="Bayi" <?= ($kematian_bayi['umur'] == 'Bayi') ? 'selected' : '' ?>>Bayi (29 Hari - 11 Bulan)</option>
+                                        <option value="Balita" <?= ($kematian_bayi['umur'] == 'Balita') ? 'selected' : '' ?>>Balita (12 Bulan - 59 Bulan)</option>
                                     </select>
 								</div>
 							</div>
