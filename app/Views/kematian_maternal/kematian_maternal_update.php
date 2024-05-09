@@ -44,7 +44,7 @@
                                     <input type="date" class="form-control" id="tanggal_kematian" name="tanggal_kematian" value="<?= esc($kematian_maternals['tanggal_kematian']) ?>" />
                                 </div>
                                 <div class="col-md-6">
-                                    <h5 class="card-title mt-2">Jam Kematia</h5>
+                                    <h5 class="card-title mt-2">Jam Kematian</h5>
                                     <input type="time" class="form-control" id="jam_kematian" name="jam_kematian" value="<?= esc($kematian_maternals['jam_kematian']) ?>" />
                                 </div>
                             </div>

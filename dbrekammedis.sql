@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2024 at 09:10 AM
+-- Generation Time: May 09, 2024 at 02:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -98,7 +98,7 @@ CREATE TABLE `kematian_bayi` (
   `id_kematian_bayi` int(11) NOT NULL,
   `no_rm` varchar(50) NOT NULL,
   `nama_pasien` varchar(50) NOT NULL,
-  `umur` int(11) NOT NULL,
+  `umur` varchar(30) NOT NULL,
   `jenis_kelamin` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `nama_ibu` varchar(50) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE `kematian_bayi` (
 --
 
 INSERT INTO `kematian_bayi` (`id_kematian_bayi`, `no_rm`, `nama_pasien`, `umur`, `jenis_kelamin`, `tgl_lahir`, `nama_ibu`, `nama_ayah`, `alamat`, `catat_buku_kia`, `tanggal_jam_kematian`, `penyebab_kematian`) VALUES
-(1, '1', 'test', 0, 'Ya', '2024-03-29', 'test', 'test', 'test', 'Ya', '2024-03-28 22:52:33', 'testits');
+(4, '000001', 'Euis', 'Neonatal Lanjut', 'Ya', '2024-03-30', 'Iis', 'Budi', 'Sarijadi', 'Ya', '2024-03-30 16:34:00', 'Mati');
 
 -- --------------------------------------------------------
 
@@ -306,7 +306,7 @@ ALTER TABLE `keluarga_berencana`
 -- AUTO_INCREMENT for table `kematian_bayi`
 --
 ALTER TABLE `kematian_bayi`
-  MODIFY `id_kematian_bayi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kematian_bayi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kematian_maternal`
