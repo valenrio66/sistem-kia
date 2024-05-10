@@ -34,7 +34,6 @@
                                         <tr style="text-align: center; vertical-align: middle">
                                             <th hidden></th>
                                             <th>Nama</th>
-                                            <th>Role</th>
                                             <th>Nomor HP</th>
                                             <th>Email</th>
                                             <th>Action</th>
@@ -50,16 +49,12 @@
                                                     <?= $user['nama_user'] ?>
                                                 </td>
                                                 <td>
-                                                    <?= $user['nama_role'] ?>
-                                                </td>
-                                                <td>
                                                     <?= $user['no_hp'] ?>
                                                 </td>
                                                 <td>
                                                     <?= $user['email'] ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?= base_url('/dashboard/user/detail/' . $user['id_user']) ?>" class="btn btn-info">Detail</a>
                                                     <a href="<?= base_url('/dashboard/user/update/' . $user['id_user']) ?>" class="btn btn-warning">Edit</a>
                                                     <a href="<?= base_url('user/delete/' . $user['id_user']) ?>" class="btn btn-danger" onclick="return confirmDelete(event)">Delete</a>
                                                 </td>

@@ -43,7 +43,6 @@ class Auth extends BaseController
 
 	public function attemptLogin()
 	{
-		$session = session();
 		$authModel = new AuthModel();
 		$username = $this->request->getVar('username');
 		$password = $this->request->getVar('password');
@@ -59,14 +58,15 @@ class Auth extends BaseController
 					'user_name' => $user['username'],
 					'logged_in' => TRUE
 				];
-				$session->set($ses_data);
-				return redirect()->to('/dashboard');
+				session()->set($ses_data);
+				session()->setFlashdata('success', 'Berhasil Login');
+				return redirect()->to('/login'); // Kembali ke halaman login dan tampilkan Sweet Alert
 			} else {
-				$session->setFlashdata('msg', 'Password salah');
+				session()->setFlashdata('msg', 'Password salah');
 				return redirect()->to('/login');
 			}
 		} else {
-			$session->setFlashdata('msg', 'Username tidak ditemukan');
+			session()->setFlashdata('msg', 'Username tidak ditemukan');
 			return redirect()->to('/login');
 		}
 	}

@@ -26,28 +26,6 @@
 	<div class="wrapper">
 
 		<?php
-		session_start(); // Mulai sesi jika belum dimulai
-
-		// Periksa apakah user ID tersedia di sesi
-		if (isset($_SESSION['user_id'])) {
-			$userId = $_SESSION['user_id'];
-
-			// Periksa apakah model user ada dan dapat digunakan
-			if (class_exists('\App\Models\UserModel')) {
-				$userModel = new \App\Models\UserModel();
-
-				// Periksa apakah userRole dapat diambil dari model
-				if (method_exists($userModel, 'getUserById')) {
-					$userRole = $userModel->getUserById($userId);
-				} else {
-					$userRole['id_role'] = 0; // Jika method tidak ada, atur ke Guest
-				}
-			} else {
-				$userRole['id_role'] = 0; // Jika model tidak ada, atur ke Guest
-			}
-		} else {
-			$userRole['id_role'] = 0; // Jika user ID tidak tersedia di sesi, atur ke Guest
-		}
 
 		// Menentukan link aktif berdasarkan halaman yang sedang dibuka
 		$currentPage = basename($_SERVER['REQUEST_URI']);
@@ -73,89 +51,57 @@
 
 					<li class="sidebar-item <?= isActive('dashboard', $currentPage) ?>">
 						<a class="sidebar-link" href="<?= base_url('/dashboard') ?>">
-							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Menu Utama</span>
 						</a>
 					</li>
 
-					<?php if ($userRole['id_role'] == 1) : ?>
-						<li class="sidebar-header">
-							Submenu Admin
-						</li>
+					<li class="sidebar-header">
+						Submenu Admin
+					</li>
 
-						<li class="sidebar-item <?= isActive('user', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/user') ?>">
-								<i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
-							</a>
-						</li>
+					<li class="sidebar-item <?= isActive('user', $currentPage) ?>">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/user') ?>">
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
+						</a>
+					</li>
 
-						<li class="sidebar-item <?= isActive('role', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/role') ?>">
-								<i class="align-middle" data-feather="users"></i> <span class="align-middle">Role</span>
-							</a>
-						</li>
+					<li class="sidebar-header">
+						Data Pelayanan Kesehatan Ibu
+					</li>
 
-						<li class="sidebar-header">
-							Data Pelayanan Kesehatan Ibu
-						</li>
+					<li class="sidebar-item <?= isActive('antenatal', $currentPage) ?>">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/antenatal') ?>">
+							<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Antenatal</span>
+						</a>
+					</li>
 
-						<li class="sidebar-item <?= isActive('antenatal', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/antenatal') ?>">
-								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Antenatal</span>
-							</a>
-						</li>
+					<li class="sidebar-item <?= isActive('persalinannifas', $currentPage) ?>">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/persalinannifas') ?>">
+							<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Persalinan dan Nifas</span>
+						</a>
+					</li>
 
-						<li class="sidebar-item <?= isActive('persalinannifas', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/persalinannifas') ?>">
-								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Persalinan dan Nifas</span>
-							</a>
-						</li>
+					<li class="sidebar-item <?= isActive('kematian_maternal', $currentPage) ?>">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_maternal') ?>">
+							<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Kematian Maternal</span>
+						</a>
+					</li>
 
-						<li class="sidebar-item <?= isActive('kematian_maternal', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_maternal') ?>">
-								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Kematian Maternal</span>
-							</a>
-						</li>
+					<li class="sidebar-item <?= isActive('keluargaberencana', $currentPage) ?>">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/keluarga_berencana') ?>">
+							<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Keluarga Berencana</span>
+						</a>
+					</li>
 
-						<li class="sidebar-item <?= isActive('keluargaberencana', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/keluarga_berencana') ?>">
-								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Keluarga Berencana</span>
-							</a>
-						</li>
+					<li class="sidebar-header">
+						Data Kematian Neonatal Bayi dan Balita
+					</li>
 
-						<li class="sidebar-header">
-							Data Kematian Neonatal Bayi dan Balita
-						</li>
-
-						<li class="sidebar-item <?= isActive('kematian_bayi', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_bayi') ?>">
-								<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Kematian</span>
-							</a>
-						</li>
-
-						<!-- Tambahkan item sidebar khusus admin di sini sesuai kebutuhan -->
-					<?php elseif ($userRole['id_role'] == 2) : ?>
-						<li class="sidebar-header">
-							Submenu Pasien
-						</li>
-
-						<li class="sidebar-item <?= isActive('profile', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/profile') ?>">
-								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-							</a>
-						</li>
-
-						<li class="sidebar-item <?= isActive('create_antrian', $currentPage) ?>">
-							<a class="sidebar-link" href="<?= base_url('/dashboard/pasien/antrian_create') ?>">
-								<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Tambah Antrian</span>
-							</a>
-						</li>
-
-						<!-- Tambahkan item sidebar khusus pasien di sini sesuai kebutuhan -->
-					<?php else : ?>
-						<li class="sidebar-item">
-							<span class="sidebar-link">Anda tidak memiliki akses</span>
-						</li>
-					<?php endif; ?>
+					<li class="sidebar-item <?= isActive('kematian_bayi', $currentPage) ?>">
+						<a class="sidebar-link" href="<?= base_url('/dashboard/kematian_bayi') ?>">
+							<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Kematian</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>

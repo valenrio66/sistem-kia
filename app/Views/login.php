@@ -17,7 +17,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="m-sm-3">
-								<form action="<?= site_url('auth/attemptLogin'); ?>" method="post">
+								<form id="loginForm" action="<?= site_url('auth/attemptLogin'); ?>" method="post">
 									<div class="mb-3">
 										<label class="form-label">Username</label>
 										<input class="form-control form-control-lg" type="text" id="username" name="username" placeholder="Masukkan Username" />
@@ -33,9 +33,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="text-center mb-3">
+					<!-- <div class="text-center mb-3">
 						Belum Punya Akun? <a href="<?= base_url('/register') ?>">Register</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -43,4 +43,29 @@
 </main>
 
 <?= $this->include('auth/footer-login') ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Content Login End -->
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		<?php if (session()->getFlashdata('success')) : ?>
+			Swal.fire({
+				title: 'Sukses!',
+				text: '<?= session()->getFlashdata('success') ?>',
+				icon: 'success',
+				showConfirmButton: false,
+				timer: 1000
+			}).then((result) => {
+				if (result.dismiss === Swal.DismissReason.timer) {
+					window.location.href = "/dashboard";
+				}
+			});
+		<?php elseif (session()->getFlashdata('msg')) : ?>
+			Swal.fire({
+				title: 'Gagal!',
+				text: '<?= session()->getFlashdata('msg') ?>',
+				icon: 'error'
+			});
+		<?php endif; ?>
+	});
+</script>

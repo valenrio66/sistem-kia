@@ -11,26 +11,9 @@ class User extends BaseController
 	public function getAllUser(): string
 	{
 		$userModel = new UserModel();
-		$data['users'] = $userModel->getUserWithRoles();
+		$data['users'] = $userModel->findAll();
 
 		return view('user/user_view', $data);
-	}
-
-	// Function for Get Data By Id
-	public function getUserById($id) : string 
-	{
-		$userModel = new UserModel();
-		$roleModel = new RoleModel();
-		$user = $userModel->find($id);
-
-		if (!$user) {
-			return 'User not found';
-		}
-
-		$role = $roleModel->find($user['id_role']);
-		$user['role_name'] = $role ? $role['nama_role'] : '';
-		$data['user'] = $user;
-		return view('user/user_detail', $data);
 	}
 
 	// Function for Create User
