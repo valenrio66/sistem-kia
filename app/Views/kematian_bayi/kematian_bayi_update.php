@@ -50,8 +50,8 @@
                             <!-- Inputan Jenis Kelamin -->
                             <h5 class="card-title mt-2">Jenis Kelamin</h5>
 							<select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
-                                <option value="Ya" <?= ($kematian_bayi['jenis_kelamin'] == 'Laki-Laki') ? 'selected' : '' ?>>Laki-Laki</option>
-								<option value="Tidak" <?= ($kematian_bayi['jenis_kelamin'] == 'Perempuan') ? 'selected' : '' ?>>Perempuan</option>
+                                <option value="Laki-Laki" <?= ($kematian_bayi['jenis_kelamin'] == 'Laki-Laki') ? 'selected' : '' ?>>Laki-Laki</option>
+								<option value="Perempuan" <?= ($kematian_bayi['jenis_kelamin'] == 'Perempuan') ? 'selected' : '' ?>>Perempuan</option>
 							</select>
 							<!-- Inputan Catat Buku KIA -->
                             <h5 class="card-title mt-2">Catat Buku KIA</h5>
