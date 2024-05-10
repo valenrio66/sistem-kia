@@ -19,7 +19,8 @@
 	];
 
 	// Menentukan nama bulan berdasarkan angka bulan saat ini
-	$bulanSekarang = date('n');
+	// $bulanSekarang = date('n');
+	$bulanSekarang = 2;
 	$namaBulan = $bulanIndonesia[$bulanSekarang];
 
 	// Menentukan tahun saat ini
